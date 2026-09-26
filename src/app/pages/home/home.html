@@ -1,0 +1,151 @@
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Home services</p>
+      <h1>{{ site.heroTitle }}</h1>
+      <p class="lead">{{ site.heroLead }}</p>
+      <p class="tagline">{{ site.tagline }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" routerLink="/" fragment="download">Download the app</a>
+        <a class="btn btn-ghost" routerLink="/" fragment="steps">See how it works</a>
+      </div>
+    </div>
+    <div>
+      <article class="booking-card">
+        <p class="kicker">Next visit</p>
+        <strong>House cleaning</strong>
+        <p class="eta">Expert arriving in 10 min</p>
+        <p class="lead">Duration set. Tasks listed. Amount confirmed before you pay.</p>
+      </article>
+      <aside class="checklist">
+        <p class="kicker">On every visit</p>
+        <ul>
+          <li>Identity-checked expert</li>
+          <li>Hygiene-trained cleaning</li>
+          <li>You rate the visit after</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Services</p>
+      <h2>Trained help for the house</h2>
+      <p class="lead">The same services you book in the Oseedy app, done inside the time you choose.</p>
+    </div>
+    <div class="services">
+      @for (service of services; track service.name; let index = $index) {
+        <article class="service-card">
+          <span>0{{ index + 1 }}</span>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.summary }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" id="steps" style="padding-top: 0">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">In three steps</p>
+      <h2>Help, without the chase</h2>
+    </div>
+    <div class="steps">
+      @for (step of steps; track step.index) {
+        <article class="step">
+          <span>{{ step.index }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.body }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section band" id="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Experts</p>
+      <h2>Vetted before they reach your door</h2>
+      <p class="lead">Comfort is how they treat your home. Hygiene is the standard of the work.</p>
+    </div>
+    <div class="trust-grid">
+      @for (point of trustPoints; track point.title) {
+        <article>
+          <h3>{{ point.title }}</h3>
+          <p>{{ point.body }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cities">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Cities</p>
+      <h2>Opening across India</h2>
+      <p class="lead">Coverage starts neighbourhood by neighbourhood. The app confirms your pin code.</p>
+    </div>
+    <div class="cities">
+      @for (city of cities; track city) {
+        <span class="city-chip">{{ city }}</span>
+      }
+    </div>
+    <p style="margin-top: 22px">
+      <a class="btn btn-ghost" routerLink="/cities">See launch cities</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The standard</p>
+      <h2>What a good visit feels like</h2>
+    </div>
+    <div class="story-grid">
+      @for (item of standards; track item.title) {
+        <article class="story">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.body }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" style="padding-top: 0">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Questions</p>
+      <h2>Before you book</h2>
+    </div>
+    <app-faq-list [items]="faqs" />
+    <p style="margin-top: 18px"><a routerLink="/faq">See all questions</a></p>
+  </div>
+</section>
+
+<section class="section" id="download" style="padding-top: 0">
+  <div class="wrap">
+    <div class="download">
+      <div>
+        <p class="kicker">Get the app</p>
+        <h2>{{ site.heroTitle }}</h2>
+        <p>{{ site.tagline }}</p>
+        <div class="store-row">
+          <div class="store"><small>Coming soon</small><strong>App Store</strong></div>
+          <div class="store"><small>Coming soon</small><strong>Google Play</strong></div>
+        </div>
+      </div>
+      <p>
+        Store links go here when the apps are public. Until then, write to
+        <a [href]="'mailto:' + site.supportEmail">{{ site.supportEmail }}</a>.
+      </p>
+    </div>
+  </div>
+</section>

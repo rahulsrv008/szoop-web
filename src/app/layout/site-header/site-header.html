@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" routerLink="/" aria-label="Oseedy home">{{ site.name }}<span>.</span></a>
+    <nav class="nav" [class.open]="menuOpen()" aria-label="Primary">
+      @for (link of links; track link.label) {
+        @if (link.fragment) {
+          <a [routerLink]="link.path" [fragment]="link.fragment">{{ link.label }}</a>
+        } @else {
+          <a [routerLink]="link.path" routerLinkActive="active">{{ link.label }}</a>
+        }
+      }
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" routerLink="/" fragment="download">Download</a>
+      <button
+        class="menu-btn"
+        type="button"
+        [attr.aria-expanded]="menuOpen()"
+        aria-label="Open menu"
+        (click)="toggleMenu()"
+      >
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

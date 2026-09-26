@@ -1,0 +1,14 @@
+<div class="faq-list">
+  @for (item of items(); track item.question; let index = $index) {
+    <article class="faq-item">
+      <h3>
+        <button type="button" [attr.aria-expanded]="openIndex() === index" (click)="toggle(index)">
+          {{ item.question }}
+        </button>
+      </h3>
+      @if (openIndex() === index) {
+        <p>{{ item.answer }}</p>
+      }
+    </article>
+  }
+</div>

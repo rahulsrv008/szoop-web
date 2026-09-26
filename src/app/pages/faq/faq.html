@@ -1,0 +1,13 @@
+<section class="page">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">FAQ</p>
+      <h1>Questions about Oseedy</h1>
+      <p class="lead">
+        Still stuck? Write to
+        <a [href]="'mailto:' + site.supportEmail">{{ site.supportEmail }}</a>.
+      </p>
+    </div>
+    <app-faq-list [items]="faqs" />
+  </div>
+</section>

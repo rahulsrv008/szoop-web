@@ -1,0 +1,35 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="wordmark" routerLink="/">{{ site.name }}</a>
+      <p class="lead" style="margin-top: 10px">{{ site.tagline }}</p>
+    </div>
+    <div>
+      <strong>Pages</strong>
+      <ul>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/cities">Cities</a></li>
+        <li><a routerLink="/faq">FAQ</a></li>
+        <li><a routerLink="/" fragment="download">Download</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Policies</strong>
+      <ul>
+        <li><a routerLink="/privacy">Privacy</a></li>
+        <li><a routerLink="/terms">Terms</a></li>
+        <li><a routerLink="/refunds">Refunds</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Contact</strong>
+      <ul>
+        <li><a [href]="'mailto:' + site.supportEmail">{{ site.supportEmail }}</a></li>
+        @for (city of cities; track city) {
+          <li>{{ city }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">© {{ year }} {{ site.name }}. All rights reserved.</div>
+</footer>
