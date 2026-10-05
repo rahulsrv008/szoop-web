@@ -11,14 +11,21 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--cream);
+  background:
+    radial-gradient(900px 520px at 12% -10%, rgba(255, 122, 26, 0.22), transparent 55%),
+    radial-gradient(720px 480px at 100% 8%, rgba(91, 45, 255, 0.16), transparent 50%),
+    radial-gradient(640px 420px at 70% 100%, rgba(42, 212, 176, 0.16), transparent 55%),
+    var(--bg);
+  background-size: 140% 140%, 140% 140%, 140% 140%, auto;
+  animation: mesh-shift 16s ease-in-out infinite;
   font-family: var(--font);
   font-size: 17px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 img {
   max-width: 100%;
+  display: block;
 }
 
 a {
@@ -42,20 +49,20 @@ h1,
 h2,
 .display {
   font-family: var(--display);
-  font-weight: 560;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
 }
 
 .skip {
   position: absolute;
   left: 16px;
   top: -40px;
-  z-index: 20;
-  background: var(--ink);
-  color: white;
+  z-index: 30;
+  background: var(--gold);
+  color: #fff;
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 999px;
 }
 
 .skip:focus {
@@ -68,10 +75,10 @@ h2,
 }
 
 .kicker {
-  color: var(--royal);
-  font-size: 13px;
-  font-weight: 650;
-  letter-spacing: 0.16em;
+  color: var(--plum);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -80,52 +87,78 @@ h2,
   font-size: 1.08rem;
 }
 
+.tagline {
+  color: var(--plum);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 18px;
+  min-height: 54px;
+  padding: 0 24px;
   border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 650;
+  border: 1.5px solid transparent;
+  font-weight: 800;
   cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn-primary {
-  background: var(--royal);
-  color: white;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff9a2b, var(--gold) 45%, var(--gold-deep));
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(255, 84, 20, 0.32);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.42), transparent 65%);
+  animation: shine 3.4s ease-in-out infinite;
 }
 
 .btn-primary:hover {
-  background: var(--royal-deep);
+  background: linear-gradient(135deg, #ffb04a, #ff7a1a 50%, #ff4d12);
 }
 
 .btn-ghost {
   background: transparent;
-  border-color: rgba(46, 26, 61, 0.18);
+  border-color: rgba(22, 18, 14, 0.16);
   color: var(--ink);
 }
 
-.btn-light {
-  background: white;
-  color: var(--royal-deep);
+.btn-ghost.on-dark {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #fff;
 }
 
 .section {
-  padding: 88px 0;
+  padding: 96px 0;
 }
 
 .section-head {
-  max-width: 640px;
+  max-width: 760px;
   margin-bottom: 36px;
 }
 
 .section-head h2 {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  margin-top: 10px;
+  font-size: clamp(2.4rem, 5.4vw, 4.2rem);
+  margin-top: 12px;
 }
 
 .section-head p {
-  margin-top: 14px;
+  margin-top: 16px;
 }

@@ -1,12 +1,32 @@
 <section class="page">
-  <div class="wrap prose">
-    <p class="kicker">About</p>
-    <h1>{{ site.name }}</h1>
-    <p class="tagline">{{ site.tagline }}</p>
-    <p class="lead" style="margin-top: 22px">
-      Oseedy is a house-help service for people who want the home to feel looked after without
-      chasing a cleaner, a laundry pile, or a dirty sink.
-    </p>
+  <div class="wrap page-hero">
+    <div>
+      <p class="eyebrow">About Oseedy</p>
+      <h1>Obsessed with <span>comfort & hygiene</span></h1>
+      <p class="lead">
+        House help for people who want the home to feel looked after — without chasing a cleaner, a
+        laundry pile, or a dirty sink.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" routerLink="/" fragment="download">Download the app</a>
+        <a class="btn btn-ghost" routerLink="/" fragment="services">See services</a>
+      </div>
+    </div>
+    <div class="page-hero-art">
+      <img src="/images/app/home-offer.png" alt="Oseedy expert" width="700" height="800" />
+    </div>
+  </div>
+
+  <div class="wrap standard-grid">
+    @for (item of standards; track item.title) {
+      <article class="page-card">
+        <p class="kicker">{{ item.title }}</p>
+        <p>{{ item.body }}</p>
+      </article>
+    }
+  </div>
+
+  <div class="wrap story-panel">
     <p>
       You book in the app. An expert who has been identity-checked and trained on hygiene arrives
       for the duration you chose. You see the price first. You rate the visit after.

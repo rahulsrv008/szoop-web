@@ -1,20 +1,18 @@
 <section class="page">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">Cities</p>
-      <h1>Where Oseedy is opening</h1>
-      <p class="lead">
-        A city on this list is a launch market. Your pin code in the app decides whether an expert
-        can reach you today.
-      </p>
-    </div>
-    <div class="page-grid">
-      @for (city of cities; track city) {
-        <article class="page-card">
-          <h3>{{ city }}</h3>
-          <p>House help as neighbourhoods come online.</p>
-        </article>
-      }
-    </div>
+  <div class="wrap page-intro">
+    <p class="eyebrow">Cities</p>
+    <h1>Opening across <span>India</span></h1>
+    <p class="lead">
+      A city on this list is a launch market. Your pin code in the app decides whether an expert can
+      reach you today.
+    </p>
+  </div>
+  <div class="wrap city-page-grid">
+    @for (city of cities; track city) {
+      <article class="city-chip">
+        {{ city }}
+        <small>House help as neighbourhoods come online</small>
+      </article>
+    }
   </div>
 </section>

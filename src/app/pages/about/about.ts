@@ -1,14 +1,17 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { site } from '../../core/config/site.content';
+import { RouterLink } from '@angular/router';
+import { site, standards } from '../../core/config/site.content';
 
 @Component({
   selector: 'app-about',
+  imports: [RouterLink],
   templateUrl: './about.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class About {
   readonly site = site;
+  readonly standards = standards;
 
   constructor() {
     inject(Title).setTitle('About · Oseedy');

@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  inject,
+  signal,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs';
@@ -14,6 +21,7 @@ export class SiteHeader {
   readonly site = site;
   readonly links = primaryNav;
   readonly menuOpen = signal(false);
+  readonly scrolled = signal(false);
   private readonly destroyRef = inject(DestroyRef);
 
   constructor() {
@@ -23,6 +31,13 @@ export class SiteHeader {
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe(() => this.menuOpen.set(false));
+
+    afterNextRender(() => {
+      const onScroll = () => this.scrolled.set(window.scrollY > 8);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      this.destroyRef.onDestroy(() => window.removeEventListener('scroll', onScroll));
+    });
   }
 
   toggleMenu(): void {

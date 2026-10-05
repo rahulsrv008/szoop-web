@@ -1,151 +1,350 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="kicker">Home services</p>
-      <h1>{{ site.heroTitle }}</h1>
-      <p class="lead">{{ site.heroLead }}</p>
-      <p class="tagline">{{ site.tagline }}</p>
-      <div class="hero-actions">
+      <p class="eyebrow animate-in">Obsessed with comfort & hygiene</p>
+      <h1 class="animate-in delay-1">Get house help<br /><span>in 10 min</span></h1>
+      <p class="hero-lead animate-in delay-2">{{ site.heroLead }}</p>
+      <div class="hero-actions animate-in delay-3">
         <a class="btn btn-primary" routerLink="/" fragment="download">Download the app</a>
-        <a class="btn btn-ghost" routerLink="/" fragment="steps">See how it works</a>
+        <a class="btn btn-ghost" routerLink="/" fragment="flow">See the customer flow</a>
       </div>
+      <ul class="hero-pills animate-in delay-4">
+        @for (stat of heroStats; track stat.label) {
+          <li>
+            <strong>{{ stat.value }}</strong>
+            {{ stat.label }}
+          </li>
+        }
+      </ul>
     </div>
-    <div>
-      <article class="booking-card">
-        <p class="kicker">Next visit</p>
-        <strong>House cleaning</strong>
-        <p class="eta">Expert arriving in 10 min</p>
-        <p class="lead">Duration set. Tasks listed. Amount confirmed before you pay.</p>
-      </article>
-      <aside class="checklist">
-        <p class="kicker">On every visit</p>
-        <ul>
-          <li>Identity-checked expert</li>
-          <li>Hygiene-trained cleaning</li>
-          <li>You rate the visit after</li>
-        </ul>
-      </aside>
+    <div
+      class="hero-stage"
+      [class.is-paused]="flowHeld()"
+      (mousemove)="tiltPhone($event)"
+      (mouseenter)="pauseFlow(true)"
+      (mouseleave)="releasePhone()"
+    >
+      <div class="hero-rail" role="tablist" aria-label="Customer flow">
+        @for (step of flowSteps; track step.index; let i = $index) {
+          <button
+            type="button"
+            role="tab"
+            [class.is-on]="flow() === i"
+            [attr.aria-selected]="flow() === i"
+            (click)="selectFlow(i)"
+          >
+            <span>{{ step.index }}</span>
+            {{ step.title }}
+          </button>
+        }
+      </div>
+      <div class="phone-rig" [style.transform]="phoneTilt()">
+        <div class="phone phone-hero">
+          @for (step of frame(); track step) {
+            <div class="phone-screen screen-in">
+              <ng-container *ngTemplateOutlet="flowScreen" />
+            </div>
+          }
+        </div>
+      </div>
+      <div class="badge badge-time">
+        <small>{{ liveBeats[flow()].kicker }}</small>
+        {{ liveBeats[flow()].line }}
+      </div>
+      <div class="badge badge-rate">
+        <small>Families</small>
+        4.8+ rated
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="services">
+<section class="press-band">
+  <p class="press-label">Featured in</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      @for (logo of pressLogos; track logo) {
+        <span>{{ logo }}</span>
+      }
+      @for (logo of pressLogos; track logo + '-dup') {
+        <span>{{ logo }}</span>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section flow-section reveal" id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The app</p>
+      <h2>The whole customer journey, on one screen.</h2>
+      <p class="lead">Open, book, track, and rate — the same path a family takes inside Oseedy.</p>
+    </div>
+
+    <div
+      class="flow-stage"
+      (mouseenter)="pauseFlow(true)"
+      (mouseleave)="pauseFlow(false)"
+    >
+      <div class="flow-side">
+        @for (step of flowSteps.slice(0, 3); track step.index; let i = $index) {
+          <button
+            type="button"
+            class="flow-chip"
+            [class.is-active]="flow() === i"
+            (click)="selectFlow(i)"
+          >
+            <span>{{ step.index }}</span>
+            <strong>{{ step.title }}</strong>
+            <small>{{ step.body }}</small>
+          </button>
+        }
+      </div>
+
+      <div class="flow-phones" aria-live="polite">
+        <div class="phone phone-back" aria-hidden="true"></div>
+        <div class="phone phone-mid" aria-hidden="true"></div>
+        <div class="phone phone-front">
+          @for (step of frame(); track step) {
+            <div class="phone-screen screen-in">
+              <ng-container *ngTemplateOutlet="flowScreen" />
+            </div>
+          }
+        </div>
+        <p class="flow-caption">{{ flowSteps[flow()].index }} · {{ flowSteps[flow()].title }}</p>
+      </div>
+
+      <div class="flow-side">
+        @for (step of flowSteps.slice(3); track step.index; let i = $index) {
+          <button
+            type="button"
+            class="flow-chip"
+            [class.is-active]="flow() === i + 3"
+            (click)="selectFlow(i + 3)"
+          >
+            <span>{{ step.index }}</span>
+            <strong>{{ step.title }}</strong>
+            <small>{{ step.body }}</small>
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="services">
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">Services</p>
-      <h2>Trained help for the house</h2>
-      <p class="lead">The same services you book in the Oseedy app, done inside the time you choose.</p>
+      <h2>Every room, looked after.</h2>
+      <p class="lead">The same services you book in the app — done in the time you choose.</p>
     </div>
-    <div class="services">
+    <div class="service-mosaic">
       @for (service of services; track service.name; let index = $index) {
-        <article class="service-card">
-          <span>0{{ index + 1 }}</span>
-          <h3>{{ service.name }}</h3>
-          <p>{{ service.summary }}</p>
+        <article class="tile" [class.tile-wide]="index === 0">
+          <img [src]="service.image" [alt]="service.name" loading="lazy" width="800" height="600" />
+          <div class="tile-copy">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.summary }}</p>
+          </div>
         </article>
       }
     </div>
   </div>
 </section>
 
-<section class="section" id="steps" style="padding-top: 0">
+<section class="section reveal" id="steps" style="padding-top: 0">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">In three steps</p>
-      <h2>Help, without the chase</h2>
+      <p class="kicker">How it works</p>
+      <h2>Three steps. Then sit down.</h2>
     </div>
-    <div class="steps">
+    <div class="steps-rail">
       @for (step of steps; track step.index) {
-        <article class="step">
-          <span>{{ step.index }}</span>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.body }}</p>
+        <article class="step-card">
+          <img [src]="step.image" [alt]="step.title" loading="lazy" width="800" height="600" />
+          <div>
+            <span>{{ step.index }}</span>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.body }}</p>
+          </div>
         </article>
       }
     </div>
   </div>
 </section>
 
-<section class="section band" id="trust">
+<section class="section reveal" id="trust">
+  <div class="wrap">
+    <div class="trust-stage">
+      <img src="/images/steps/slide-1.png" alt="Oseedy expert" width="900" height="1100" />
+      <div class="trust-copy">
+        <p class="kicker">Experts</p>
+        <h2>Vetted before they reach your door.</h2>
+        <p class="lead">Comfort is how they treat your home. Hygiene is the standard of the work.</p>
+        <div class="trust-list">
+          @for (point of trustPoints; track point.title) {
+            <article>
+              <h3>{{ point.title }}</h3>
+              <p>{{ point.body }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="reviews" style="padding-top: 0">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">Experts</p>
-      <h2>Vetted before they reach your door</h2>
-      <p class="lead">Comfort is how they treat your home. Hygiene is the standard of the work.</p>
+      <p class="kicker">Families</p>
+      <h2>Rated after every visit.</h2>
     </div>
-    <div class="trust-grid">
-      @for (point of trustPoints; track point.title) {
-        <article>
-          <h3>{{ point.title }}</h3>
-          <p>{{ point.body }}</p>
+    <div class="review-rail">
+      @for (item of testimonials; track item.name) {
+        <article class="review-card">
+          <img [src]="item.image" [alt]="item.name" loading="lazy" width="200" height="200" />
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>{{ item.quote }}</blockquote>
+          <footer>{{ item.name }} · {{ item.city }}</footer>
         </article>
       }
     </div>
   </div>
 </section>
 
-<section class="section" id="cities">
-  <div class="wrap">
-    <div class="section-head">
+<section class="section reveal" id="cities">
+  <div class="wrap city-wall">
+    <div>
       <p class="kicker">Cities</p>
-      <h2>Opening across India</h2>
+      <h2>Opening across India.</h2>
       <p class="lead">Coverage starts neighbourhood by neighbourhood. The app confirms your pin code.</p>
+      <a class="btn btn-ghost" routerLink="/cities" style="margin-top: 24px">See launch cities</a>
     </div>
-    <div class="cities">
+    <div class="city-grid">
       @for (city of cities; track city) {
         <span class="city-chip">{{ city }}</span>
       }
     </div>
-    <p style="margin-top: 22px">
-      <a class="btn btn-ghost" routerLink="/cities">See launch cities</a>
-    </p>
   </div>
 </section>
 
-<section class="section" style="padding-top: 0">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">The standard</p>
-      <h2>What a good visit feels like</h2>
-    </div>
-    <div class="story-grid">
-      @for (item of standards; track item.title) {
-        <article class="story">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.body }}</p>
-        </article>
-      }
-    </div>
-  </div>
-</section>
-
-<section class="section" id="faq" style="padding-top: 0">
-  <div class="wrap">
-    <div class="section-head">
+<section class="section reveal" id="faq" style="padding-top: 0">
+  <div class="wrap faq-split">
+    <div>
       <p class="kicker">Questions</p>
-      <h2>Before you book</h2>
+      <h2>Before you book.</h2>
+      <p class="lead" style="margin-top: 16px">
+        <a routerLink="/faq">See all questions →</a>
+      </p>
     </div>
     <app-faq-list [items]="faqs" />
-    <p style="margin-top: 18px"><a routerLink="/faq">See all questions</a></p>
   </div>
 </section>
 
-<section class="section" id="download" style="padding-top: 0">
+<section class="section reveal" id="download">
   <div class="wrap">
-    <div class="download">
+    <div class="download-stage">
       <div>
         <p class="kicker">Get the app</p>
-        <h2>{{ site.heroTitle }}</h2>
-        <p>{{ site.tagline }}</p>
+        <h2>House help in 10 minutes.</h2>
+        <p class="lead">{{ site.tagline }}</p>
         <div class="store-row">
           <div class="store"><small>Coming soon</small><strong>App Store</strong></div>
           <div class="store"><small>Coming soon</small><strong>Google Play</strong></div>
         </div>
       </div>
-      <p>
-        Store links go here when the apps are public. Until then, write to
-        <a [href]="'mailto:' + site.supportEmail">{{ site.supportEmail }}</a>.
-      </p>
+      <img src="/images/app/preview-on-purple.png" alt="Oseedy expert" width="700" height="800" />
     </div>
   </div>
 </section>
+
+<ng-template #flowScreen>
+  @switch (flow()) {
+    @case (0) {
+      <ng-container *ngTemplateOutlet="signInScreen" />
+    }
+    @case (1) {
+      <ng-container *ngTemplateOutlet="homeScreen" />
+    }
+    @case (2) {
+      <ng-container *ngTemplateOutlet="visitScreen" />
+    }
+    @case (3) {
+      <ng-container *ngTemplateOutlet="payScreen" />
+    }
+    @case (4) {
+      <ng-container *ngTemplateOutlet="trackScreen" />
+    }
+    @default {
+      <ng-container *ngTemplateOutlet="rateScreen" />
+    }
+  }
+</ng-template>
+
+<ng-template #signInScreen>
+  <div class="app app-welcome">
+    <p class="app-brand">Oseedy</p>
+    <p class="app-tag">Obsessed with comfort & hygiene</p>
+    <h3>Welcome back</h3>
+    <label>Mobile number</label>
+    <div class="app-field">+91  98000 00000</div>
+    <div class="app-btn">Send code</div>
+    <p class="app-note">We’ll text a 4-digit code. That’s the sign-in.</p>
+  </div>
+</ng-template>
+
+<ng-template #homeScreen>
+  <img
+    class="app-shot"
+    src="/images/app/customer-home.jpg"
+    alt="Oseedy home in Noida: salon at home, cleaning, dishes, laundry, and a healthy cook"
+  />
+</ng-template>
+
+<ng-template #visitScreen>
+  <div class="app">
+    <p class="app-kicker">House cleaning</p>
+    <h3>How long?</h3>
+    <div class="app-pills"><b>1 hr</b><span>2 hr</span><span>3 hr</span></div>
+    <ul class="app-tasks">
+      <li>Sweep & mop</li>
+      <li>Dust surfaces</li>
+      <li>Kitchen counters</li>
+    </ul>
+    <div class="app-total"><span>Today, from ₹399</span><b>Continue</b></div>
+  </div>
+</ng-template>
+
+<ng-template #payScreen>
+  <div class="app">
+    <p class="app-kicker">Checkout</p>
+    <h3>Confirm the visit</h3>
+    <div class="app-row"><span>When</span><b>Today, 4:00 PM</b></div>
+    <div class="app-row"><span>Where</span><b>Noida, Sector 62</b></div>
+    <div class="app-row"><span>Visit</span><b>1 hour clean</b></div>
+    <div class="app-total"><span>Pay ₹399</span><b>Book</b></div>
+  </div>
+</ng-template>
+
+<ng-template #trackScreen>
+  <div class="app app-track">
+    <div class="app-map">
+      <span>8 min away</span>
+    </div>
+    <h3>Priya is on the way</h3>
+    <p class="app-note">Share this code when she arrives.</p>
+    <div class="app-otp">4 8 2 1</div>
+  </div>
+</ng-template>
+
+<ng-template #rateScreen>
+  <div class="app app-rate">
+    <p class="app-kicker">Visit complete</p>
+    <h3>How was Priya?</h3>
+    <div class="app-stars">★★★★★</div>
+    <div class="app-field">Kitchen and floors were spotless</div>
+    <div class="app-btn">Submit rating</div>
+  </div>
+</ng-template>
