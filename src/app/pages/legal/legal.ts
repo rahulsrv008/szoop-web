@@ -16,7 +16,7 @@ export class Legal {
   constructor() {
     const slug = inject(ActivatedRoute).snapshot.data['page'] as string;
     this.page = legalPages[slug];
-    inject(Title).setTitle(`${this.page.title} · Oseedy`);
+    inject(Title).setTitle(`${this.page.title} · Szoop`);
     inject(Meta).updateTag({
       name: 'description',
       content: this.page.paragraphs[0],

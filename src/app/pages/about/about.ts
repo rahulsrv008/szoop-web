@@ -14,10 +14,10 @@ export class About {
   readonly standards = standards;
 
   constructor() {
-    inject(Title).setTitle('About · Oseedy');
+    inject(Title).setTitle('About · Szoop');
     inject(Meta).updateTag({
       name: 'description',
-      content: 'Oseedy is house help booked in minutes, built around comfort and hygiene.',
+      content: 'Szoop is house help booked in minutes, built around comfort and hygiene.',
     });
   }
 }

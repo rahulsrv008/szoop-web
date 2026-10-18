@@ -1,8 +1,8 @@
 export const environment = {
   production: false,
-  brand: 'Oseedy',
-  tagline: 'Obsessed with comfort & hygiene',
-  supportEmail: 'hello@oseedy.com',
+  brand: 'Szoop',
+  tagline: 'Need it? Szoop it.',
+  supportEmail: 'hello@szoop.in',
   appStoreUrl: '',
   playStoreUrl: '',
 };

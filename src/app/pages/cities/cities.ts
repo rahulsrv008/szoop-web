@@ -11,10 +11,10 @@ export class Cities {
   readonly cities = cities;
 
   constructor() {
-    inject(Title).setTitle('Cities · Oseedy');
+    inject(Title).setTitle('Cities · Szoop');
     inject(Meta).updateTag({
       name: 'description',
-      content: 'Oseedy is opening house-help bookings city by city across India.',
+      content: 'Szoop is opening house-help bookings city by city across India.',
     });
   }
 }

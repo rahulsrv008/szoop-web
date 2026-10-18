@@ -14,10 +14,10 @@ export class Faq {
   readonly site = site;
 
   constructor() {
-    inject(Title).setTitle('FAQ · Oseedy');
+    inject(Title).setTitle('FAQ · Szoop');
     inject(Meta).updateTag({
       name: 'description',
-      content: 'Answers about booking Oseedy house help, experts, and cities.',
+      content: 'Answers about booking Szoop house help, experts, and cities.',
     });
   }
 }

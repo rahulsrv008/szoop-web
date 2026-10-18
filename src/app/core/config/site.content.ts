@@ -158,7 +158,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'First time using Oseedy and the expert was quick, polite, and left the kitchen spotless.',
+      'First time using Szoop and the expert was quick, polite, and left the kitchen spotless.',
     name: 'Reshma K.',
     city: 'Bengaluru',
     rating: 5,
@@ -225,9 +225,9 @@ export const standards: Standard[] = [
 
 export const faqs: FaqItem[] = [
   {
-    question: 'What is Oseedy?',
+    question: 'What is Szoop?',
     answer:
-      'Oseedy connects you with trained experts for everyday house help. Book in the app, set a duration, and an expert comes to your home.',
+      'Szoop connects you with trained experts for everyday house help. Book in the app, set a duration, and an expert comes to your home.',
   },
   {
     question: 'What can I book?',
@@ -247,7 +247,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Which cities are covered?',
     answer:
-      'Oseedy is opening neighbourhood by neighbourhood, starting with Bengaluru, Mumbai, Delhi NCR, Hyderabad, Pune, and Chennai. Coverage in the app is the source of truth for your pin code.',
+      'Szoop is opening neighbourhood by neighbourhood, starting with Bengaluru, Mumbai, Delhi NCR, Hyderabad, Pune, and Chennai. Coverage in the app is the source of truth for your pin code.',
   },
 ];
 
@@ -257,7 +257,7 @@ export const legalPages: Record<string, LegalPage> = {
     title: 'Privacy policy',
     updated: '26 September 2026',
     paragraphs: [
-      'Oseedy collects the details needed to create an account, send a one-time password, save an address, and complete a booking.',
+      'Szoop collects the details needed to create an account, send a one-time password, save an address, and complete a booking.',
       'That includes your mobile number, name, saved addresses, booking history, and payment references from the payment provider. We do not sell this information.',
       'Location is used only to match a nearby expert and to fill an address you choose to save.',
       'You can ask us to correct or delete your account by writing to the support address on this website.',
@@ -268,7 +268,7 @@ export const legalPages: Record<string, LegalPage> = {
     title: 'Terms of use',
     updated: '26 September 2026',
     paragraphs: [
-      'Oseedy provides a way to book independent home-service experts. The visit is for the tasks and duration you confirm in the app.',
+      'Szoop provides a way to book independent home-service experts. The visit is for the tasks and duration you confirm in the app.',
       'Prices shown before payment are the prices you pay, aside from any coupon you apply. Cancellations follow the policy shown at checkout.',
       'Experts are expected to work safely and respectfully in your home. You are expected to provide a safe place to work and clear access to the tasks you booked.',
       'These pages describe the service. The booking confirmation in the app is the record of a specific visit.',

@@ -60,11 +60,11 @@ export class Home implements AfterViewInit, OnDestroy {
   private flowPaused = false;
 
   constructor() {
-    inject(Title).setTitle('Oseedy — House help in 10 minutes');
+    inject(Title).setTitle('Szoop — House help in 10 minutes');
     inject(Meta).updateTag({
       name: 'description',
       content:
-        'Book trained house help with Oseedy. Obsessed with comfort and hygiene. Cleaning, laundry, dishes, and more.',
+        'Book trained house help with Szoop. Need it? Szoop it for cleaning, laundry, dishes, and more.',
     });
   }
 
