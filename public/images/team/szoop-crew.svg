@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+  <title id="title">The Szoop home-care crew</title>
+  <desc id="desc">Three friendly home-care experts smiling in bright uniforms with Szoop printed on each shirt.</desc>
+  <defs>
+    <linearGradient id="shirt" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8a4abb"/>
+      <stop offset="1" stop-color="#4c1d6b"/>
+    </linearGradient>
+    <linearGradient id="shirt-two" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f3c4ce"/>
+      <stop offset="1" stop-color="#d987a1"/>
+    </linearGradient>
+    <linearGradient id="shirt-three" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#c9a96e"/>
+      <stop offset="1" stop-color="#a8844a"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M103 539c-38-144 27-306 156-369 125-61 238 8 340-10 146-25 257 87 274 220 19 146-91 242-225 236-117-5-185 49-321 35-107-12-197-39-224-112Z" fill="#eee4f5"/>
+  <circle cx="189" cy="167" r="42" fill="#ffe293"/>
+  <circle cx="821" cy="150" r="19" fill="#ff987b"/>
+  <path d="m861 290 12 26 29 4-21 20 5 29-25-14-26 14 5-29-21-20 29-4 13-26Z" fill="#fff" opacity=".86"/>
+  <path d="m139 356 9 19 21 3-15 15 4 21-19-10-19 10 4-21-15-15 21-3 9-19Z" fill="#fff" opacity=".9"/>
+
+  <ellipse cx="503" cy="626" rx="365" ry="33" fill="#dfd2e9"/>
+
+  <path d="M139 617c9-112 51-165 128-165s120 53 128 165H139Z" fill="url(#shirt-two)"/>
+  <path d="M204 481c-25-18-43-42-46-68l49-14 35 21 35-21 48 14c-4 27-22 51-46 68l-38 20-37-20Z" fill="#ffd36e"/>
+  <path d="M183 318c0-59 37-98 86-98 54 0 86 40 86 98 0 61-37 103-86 103-49 0-86-42-86-103Z" fill="#a95f43"/>
+  <path d="M178 316c-7-45 3-93 40-117 29-19 77-20 105 1 33 24 43 60 34 112l-21-47-33-20-41 16-42-13-29 27-13 41Z" fill="#332a39"/>
+  <path d="M216 319c0-8 6-13 13-13s13 5 13 13-6 11-13 11-13-3-13-11Zm62 0c0-8 6-13 13-13s13 5 13 13-6 11-13 11-13-3-13-11Z" fill="#2c2331"/>
+  <path d="M244 359c12 11 29 11 41 0" fill="none" stroke="#fff0df" stroke-linecap="round" stroke-width="7"/>
+  <path d="M245 439v32l25 21 26-21v-32" fill="#a95f43"/>
+  <rect x="230" y="497" width="75" height="32" rx="10" fill="#fff"/>
+  <text x="267" y="519" fill="#4c1d6b" font-family="Arial,sans-serif" font-size="15" font-weight="700" text-anchor="middle">SZOOP</text>
+  <path d="M173 523 133 557l20 31 37-23m143-42 40 34-19 31-37-22" fill="none" stroke="#a95f43" stroke-linecap="round" stroke-width="24"/>
+
+  <path d="M366 630c6-145 52-218 137-218s131 73 137 218H366Z" fill="url(#shirt)"/>
+  <path d="M429 441c-26-15-44-39-48-65l48-18 35 22 39-21 46 18c-4 26-22 49-47 64l-39 21-34-21Z" fill="#ffcf72"/>
+  <path d="M424 278c0-67 36-109 83-109s83 42 83 109c0 74-36 120-83 120s-83-46-83-120Z" fill="#b86e4a"/>
+  <path d="M413 282c-5-61 7-111 46-136 36-24 90-20 119 11 25 27 27 68 18 120l-23-56-41-28-43 15-43-10-26 30-7 54Z" fill="#292638"/>
+  <path d="M453 282c0-8 6-13 13-13s13 5 13 13-6 12-13 12-13-4-13-12Zm69 0c0-8 6-13 13-13s13 5 13 13-6 12-13 12-13-4-13-12Z" fill="#2b2531"/>
+  <path d="M482 327c14 13 33 13 48 0" fill="none" stroke="#fff0df" stroke-linecap="round" stroke-width="8"/>
+  <path d="M474 398v40l34 25 33-25v-40" fill="#b86e4a"/>
+  <rect x="467" y="491" width="82" height="35" rx="11" fill="#fff"/>
+  <text x="508" y="515" fill="#4c1d6b" font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle">SZOOP</text>
+  <path d="m399 515-39 36 20 32 41-26m180-42 39 34-18 32-42-23" fill="none" stroke="#b86e4a" stroke-linecap="round" stroke-width="26"/>
+
+  <path d="M622 617c7-113 48-165 126-165 75 0 117 52 125 165H622Z" fill="url(#shirt-three)"/>
+  <path d="M682 481c-24-18-40-42-44-68l46-15 34 22 36-22 46 15c-4 27-22 50-46 68l-36 20-36-20Z" fill="#ffcf72"/>
+  <path d="M666 316c0-61 34-99 82-99 52 0 82 39 82 99 0 61-35 103-82 103s-82-42-82-103Z" fill="#754630"/>
+  <path d="M654 315c-6-55 4-101 39-122 31-20 79-19 108 1 33 23 40 61 31 115l-19-45-38-22-43 13-39-13-28 29-11 44Z" fill="#31253a"/>
+  <path d="M694 316c0-8 6-12 13-12s13 4 13 12-6 12-13 12-13-4-13-12Zm62 0c0-8 6-12 13-12s13 4 13 12-6 12-13 12-13-4-13-12Z" fill="#292230"/>
+  <path d="M722 357c12 11 29 11 41 0" fill="none" stroke="#fff0df" stroke-linecap="round" stroke-width="7"/>
+  <path d="M695 438v33l32 23 31-23v-33" fill="#754630"/>
+  <rect x="691" y="497" width="76" height="32" rx="10" fill="#fff"/>
+  <text x="729" y="519" fill="#4c1d6b" font-family="Arial,sans-serif" font-size="15" font-weight="700" text-anchor="middle">SZOOP</text>
+  <path d="m655 523-39 35 20 31 40-23m146-43 40 34-19 32-38-22" fill="none" stroke="#754630" stroke-linecap="round" stroke-width="24"/>
+
+  <path d="M166 604c-27-21-34-45-24-73 27 1 49 10 66 30 6 25-9 39-42 43Zm651-20c12-31 33-47 64-49 10 29 4 53-19 72-25 4-40-4-45-23Z" fill="#39bc91"/>
+  <path d="m160 519 14-26 14 26m615 11 14-26 14 26" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7"/>
+  <path d="m350 157 9 20 22 3-16 15 4 22-19-11-19 11 4-22-16-15 22-3 9-20Z" fill="#ff9c79"/>
+</svg>

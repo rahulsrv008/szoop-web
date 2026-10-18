@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Szoop">
+  <defs>
+    <linearGradient id="symbolGradient" x1="8" y1="8" x2="56" y2="56">
+      <stop offset="0" stop-color="#21106f"/>
+      <stop offset="0.55" stop-color="#5836d7"/>
+      <stop offset="1" stop-color="#8c64ed"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 32c0-14 18-18 27-7l5 6c9 10 20 7 20-3 0-10-15-14-25-5l-6 6c-10 10-21 7-21-3" fill="none" stroke="url(#symbolGradient)" stroke-linecap="round" stroke-width="9"/>
+  <path d="M45 11l3-7M53 16l6-6M56 25l7-2" fill="none" stroke="#6d45df" stroke-linecap="round" stroke-width="4"/>
+</svg>
