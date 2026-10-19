@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from '../../core/seo/seo.service';
 import { cities } from '../../core/config/site.content';
 
 @Component({
@@ -11,10 +11,11 @@ export class Cities {
   readonly cities = cities;
 
   constructor() {
-    inject(Title).setTitle('Cities · Szoop');
-    inject(Meta).updateTag({
-      name: 'description',
-      content: 'Szoop is opening house-help bookings city by city across India.',
+    inject(SeoService).setPage({
+      title: 'Szoop Cities | Home Cleaning and House Help Near You',
+      description:
+        'Find Szoop home cleaning and house help in Bengaluru, Mumbai, Delhi NCR, Gurugram, Noida, Hyderabad, Pune, and Chennai. Check your pin code in the app.',
+      path: '/cities',
     });
   }
 }

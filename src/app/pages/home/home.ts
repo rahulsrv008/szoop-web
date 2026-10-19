@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from '../../core/seo/seo.service';
 import { FaqList } from '../../shared/faq-list/faq-list';
 import {
   cities,
@@ -60,11 +60,11 @@ export class Home implements AfterViewInit, OnDestroy {
   private flowPaused = false;
 
   constructor() {
-    inject(Title).setTitle('Szoop — House help in 10 minutes');
-    inject(Meta).updateTag({
-      name: 'description',
-      content:
-        'Book trained house help with Szoop. Need it? Szoop it for cleaning, laundry, dishes, and more.',
+    inject(SeoService).setPage({
+      title: 'Szoop | Quick Home Cleaning & House Help App',
+      description:
+        'Book quick home cleaning and trusted house help with the Szoop app. Get help with bathrooms, dishes, laundry, and more across 8 Indian cities.',
+      path: '/',
     });
   }
 

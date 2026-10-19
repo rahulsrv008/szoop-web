@@ -15,12 +15,13 @@ import {
 export const site = {
   name: environment.brand,
   tagline: environment.tagline,
+  url: environment.siteUrl,
   supportEmail: environment.supportEmail,
   appStoreUrl: environment.appStoreUrl,
   playStoreUrl: environment.playStoreUrl,
   heroTitle: 'House help in 10 minutes',
   heroLead:
-    'Book a trained expert for the cleaning and care that make a home feel calm. Comfort first. Hygiene always.',
+    'Get quick home cleaning and reliable house help with Szoop. Book cleaning, bathroom care, dishes, or laundry in the app, in minutes.',
 };
 
 export const primaryNav: NavLink[] = [

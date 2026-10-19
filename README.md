@@ -1,8 +1,8 @@
-# Oseedy web
+# Szoop website
 
-Public marketing site for Oseedy. Angular 21, standalone components, lazy routes.
+Public marketing site for Szoop. Angular 21, standalone components, lazy routes.
 
-The homepage follows the same kind of flow as [Snabbit](https://www.snabbit.com/): hero, services, three steps, cities, expert trust, questions, and a download band. Copy, color, and services belong to Oseedy (`Obsessed with comfort & hygiene`).
+The homepage introduces Szoop's quick home cleaning and house-help services, booking flow, launch cities, expert standards, FAQs, and mobile apps. Brand copy and service information live in `src/app/core/config/site.content.ts`.
 
 ## Structure
 
@@ -22,4 +22,4 @@ npm start          # http://localhost:4200
 npm run build      # production build
 ```
 
-Store links and the support email live in `src/environments`. Production replaces that file via `angular.json`.
+Store links, the canonical site URL, and the support email live in `src/environments`. Production replaces that file via `angular.json`. Public crawl settings and the sitemap are in `public/robots.txt` and `public/sitemap.xml`.

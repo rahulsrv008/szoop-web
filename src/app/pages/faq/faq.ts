@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { faqs, site } from '../../core/config/site.content';
 import { FaqList } from '../../shared/faq-list/faq-list';
+import { SeoService } from '../../core/seo/seo.service';
 
 @Component({
   selector: 'app-faq',
@@ -14,10 +14,11 @@ export class Faq {
   readonly site = site;
 
   constructor() {
-    inject(Title).setTitle('FAQ · Szoop');
-    inject(Meta).updateTag({
-      name: 'description',
-      content: 'Answers about booking Szoop house help, experts, and cities.',
+    inject(SeoService).setPage({
+      title: 'Szoop FAQ | Home Cleaning App and Booking Help',
+      description:
+        'Get answers about booking Szoop home cleaning, available services, trusted experts, arrival times, and launch cities.',
+      path: '/faq',
     });
   }
 }

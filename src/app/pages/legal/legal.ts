@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { legalPages } from '../../core/config/site.content';
 import { LegalPage } from '../../core/models/content.models';
+import { SeoService } from '../../core/seo/seo.service';
 
 @Component({
   selector: 'app-legal',
@@ -16,10 +16,10 @@ export class Legal {
   constructor() {
     const slug = inject(ActivatedRoute).snapshot.data['page'] as string;
     this.page = legalPages[slug];
-    inject(Title).setTitle(`${this.page.title} · Szoop`);
-    inject(Meta).updateTag({
-      name: 'description',
-      content: this.page.paragraphs[0],
+    inject(SeoService).setPage({
+      title: `${this.page.title} | Szoop`,
+      description: this.page.paragraphs[0],
+      path: `/${this.page.slug}`,
     });
   }
 }

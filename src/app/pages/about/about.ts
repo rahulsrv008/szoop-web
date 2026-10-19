@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../../core/seo/seo.service';
 import { site, standards } from '../../core/config/site.content';
 
 @Component({
@@ -14,10 +14,11 @@ export class About {
   readonly standards = standards;
 
   constructor() {
-    inject(Title).setTitle('About · Szoop');
-    inject(Meta).updateTag({
-      name: 'description',
-      content: 'Szoop is house help booked in minutes, built around comfort and hygiene.',
+    inject(SeoService).setPage({
+      title: 'About Szoop | Quick Home Cleaning and House Help',
+      description:
+        'Meet Szoop, the home services app for quick cleaning, laundry, dishes, and everyday house help with a focus on comfort and hygiene.',
+      path: '/about',
     });
   }
 }
