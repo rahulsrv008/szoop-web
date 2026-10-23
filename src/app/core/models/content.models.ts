@@ -53,9 +53,15 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface LegalSection {
+  heading: string;
+  paragraphs: string[];
+}
+
 export interface LegalPage {
   slug: string;
   title: string;
   updated: string;
   paragraphs: string[];
+  sections?: LegalSection[];
 }

@@ -6,6 +6,12 @@
       @for (paragraph of page.paragraphs; track paragraph) {
         <p>{{ paragraph }}</p>
       }
+      @for (section of page.sections; track section.heading) {
+        <h2>{{ section.heading }}</h2>
+        @for (paragraph of section.paragraphs; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      }
       <p><a class="btn btn-ghost" routerLink="/">Back home</a></p>
     </div>
   </div>

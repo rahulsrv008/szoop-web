@@ -255,13 +255,69 @@ export const faqs: FaqItem[] = [
 export const legalPages: Record<string, LegalPage> = {
   privacy: {
     slug: 'privacy',
-    title: 'Privacy policy',
-    updated: '26 September 2026',
+    title: 'Privacy Policy',
+    updated: '23 October 2026',
     paragraphs: [
-      'Szoop collects the details needed to create an account, send a one-time password, save an address, and complete a booking.',
-      'That includes your mobile number, name, saved addresses, booking history, and payment references from the payment provider. We do not sell this information.',
-      'Location is used only to match a nearby expert and to fill an address you choose to save.',
-      'You can ask us to correct or delete your account by writing to the support address on this website.',
+      'This Privacy Policy explains how Szoop (“we”, “us”) collects, uses, and shares information when you use the Szoop customer app, the Szoop Partner app, or this website.',
+    ],
+    sections: [
+      {
+        heading: 'Who we are',
+        paragraphs: [
+          'Szoop is a home-services platform. We connect customers with independent experts for cleaning and other household help, and we operate the Partner app that experts use to accept and complete visits.',
+          'Questions about this policy can be sent to hello@szoop.in.',
+        ],
+      },
+      {
+        heading: 'Information we collect',
+        paragraphs: [
+          'Account details: mobile number, name, and a one-time password we send to verify the number.',
+          'Booking details: service type, address, time slot, notes, and visit history.',
+          'Location: used to check serviceability, match a nearby expert, show distance and directions, and fill an address you choose to save.',
+          'Payments: payment references from our payment provider. We do not store full card or UPI credentials on our servers.',
+          'Partner profile: skills, identity and KYC documents, bank account details for payouts, ratings, and job activity.',
+          'Device and support data: app version, crash or error logs, and messages you send to support.',
+        ],
+      },
+      {
+        heading: 'How we use it',
+        paragraphs: [
+          'To create and secure your account, complete bookings, notify you about visits, process payments and partner payouts, improve the service, and meet legal or safety requirements.',
+          'We do not sell your personal information.',
+        ],
+      },
+      {
+        heading: 'How we share it',
+        paragraphs: [
+          'With the assigned expert: the address, booking time, and service details needed to complete the visit. We do not show your phone number in the Partner app.',
+          'With payment, maps, hosting, and messaging providers who process data on our instructions.',
+          'When the law requires it, or to protect users from fraud or harm.',
+        ],
+      },
+      {
+        heading: 'How long we keep it',
+        paragraphs: [
+          'Account and booking records are kept while the account is active and for a limited period after, as needed for refunds, disputes, and tax or legal records. You can ask us to delete your account by writing to hello@szoop.in.',
+        ],
+      },
+      {
+        heading: 'Your choices',
+        paragraphs: [
+          'You can update your name and addresses in the app, turn off optional location access in your phone settings (some booking features will then not work), and request a copy or deletion of your account data.',
+        ],
+      },
+      {
+        heading: 'Children',
+        paragraphs: [
+          'Szoop is not directed at children under 18. We do not knowingly collect personal information from children.',
+        ],
+      },
+      {
+        heading: 'Updates',
+        paragraphs: [
+          'We may update this policy as the service changes. The date at the top of this page is the latest revision. Continued use of Szoop after an update means you accept the revised policy.',
+        ],
+      },
     ],
   },
   terms: {

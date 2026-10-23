@@ -23,6 +23,11 @@ export const routes: Routes = [
     data: { page: 'privacy' },
   },
   {
+    path: 'privacy-policy',
+    loadComponent: () => import('./pages/legal/legal').then((m) => m.Legal),
+    data: { page: 'privacy' },
+  },
+  {
     path: 'terms',
     loadComponent: () => import('./pages/legal/legal').then((m) => m.Legal),
     data: { page: 'terms' },

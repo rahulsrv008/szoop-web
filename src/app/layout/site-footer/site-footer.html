@@ -17,7 +17,7 @@
     <div>
       <strong>Policies</strong>
       <ul>
-        <li><a routerLink="/privacy">Privacy</a></li>
+        <li><a routerLink="/privacy">Privacy Policy</a></li>
         <li><a routerLink="/terms">Terms</a></li>
         <li><a routerLink="/refunds">Refunds</a></li>
       </ul>
@@ -32,5 +32,14 @@
       </ul>
     </div>
   </div>
-  <div class="wrap legal">© {{ year }} {{ site.name }}. All rights reserved.</div>
+  <div class="wrap legal">
+    © {{ year }} {{ site.name }}. All rights reserved.
+    <span class="legal-links">
+      <a routerLink="/privacy">Privacy Policy</a>
+      ·
+      <a routerLink="/terms">Terms</a>
+      ·
+      <a routerLink="/refunds">Refunds</a>
+    </span>
+  </div>
 </footer>
