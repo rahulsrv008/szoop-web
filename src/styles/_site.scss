@@ -1303,6 +1303,64 @@
   margin-top: 20px;
 }
 
+.delete-form {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0 8px;
+}
+
+.delete-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.delete-form input,
+.delete-form textarea {
+  width: 100%;
+  border: 1.5px solid rgba(22, 18, 14, 0.14);
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.delete-form textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+.delete-form .btn {
+  justify-self: start;
+}
+
+.delete-form .btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.delete-note {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 16px;
+}
+
+.delete-note.is-ok {
+  background: #ecfdf3;
+  color: #166534;
+}
+
+.delete-note.is-error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.legal-page code {
+  font-size: 0.9em;
+}
+
 .faq-page {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;

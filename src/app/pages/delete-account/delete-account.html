@@ -1,0 +1,80 @@
+<section class="page">
+  <div class="wrap legal-page">
+    <p class="eyebrow">Szoop - A lifestyle brand</p>
+    <h1>Delete your Szoop account</h1>
+    <p class="lead">
+      This page is the official account-deletion request for
+      <strong>Szoop - A lifestyle brand</strong> on Google Play and iOS devices. Use it to
+      ask Szoop to delete the customer account tied to your mobile number.
+    </p>
+
+    <div class="story-panel">
+      <h2>How Szoop deletes your account</h2>
+      <p>
+        If you can still open the Szoop app, go to <strong>Profile → Delete account</strong>. That
+        marks the account deleted and sends a request to Szoop.
+      </p>
+      <p>
+        If you cannot open the app, submit the form below or write to
+        <a [href]="'mailto:' + site.supportEmail">{{ site.supportEmail }}</a> from the number or
+        email on the account. The account is marked deleted.
+      </p>
+
+      <h2>What happens next</h2>
+      <p>
+        Your account is marked deleted. Old details stay in Szoop until support removes them. If
+        you sign in again with the same number, you start as a new Szoop customer.
+      </p>
+
+      <h2>Request deletion of a Szoop account</h2>
+      @if (status() === 'sent') {
+        <p class="delete-note is-ok">
+          Szoop has received your deletion request. If a customer account exists for that number,
+          it is marked deleted. Signing in again starts a new customer.
+        </p>
+      } @else {
+        <form class="delete-form" (submit)="onSubmit($event)">
+          <label>
+            Full name
+            <input type="text" name="name" autocomplete="name" maxlength="100" />
+          </label>
+          <label>
+            Mobile number on the Szoop account
+            <input
+              type="tel"
+              name="mobile"
+              inputmode="numeric"
+              autocomplete="tel"
+              maxlength="15"
+              placeholder="10-digit mobile"
+              required
+            />
+          </label>
+          <label>
+            Email (optional)
+            <input type="email" name="email" autocomplete="email" maxlength="255" />
+          </label>
+          <label>
+            Anything we should know
+            <textarea name="note" rows="3" maxlength="500"></textarea>
+          </label>
+          @if (status() === 'error') {
+            <p class="delete-note is-error">{{ errorText() }}</p>
+          }
+          <button class="btn btn-primary" type="submit" [disabled]="status() === 'sending'">
+            {{ status() === 'sending' ? 'Sending…' : 'Request Szoop account deletion' }}
+          </button>
+        </form>
+      }
+
+      <p>
+        Questions: <a [href]="'mailto:' + site.supportEmail">{{ site.supportEmail }}</a>. This
+        request is only for Szoop customer accounts, not Szoop Partner.
+      </p>
+      <p>
+        <a class="btn btn-ghost" routerLink="/privacy">Privacy Policy</a>
+        <a class="btn btn-ghost" routerLink="/">Back home</a>
+      </p>
+    </div>
+  </div>
+</section>

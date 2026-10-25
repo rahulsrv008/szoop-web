@@ -5,8 +5,8 @@
       <h1 class="animate-in delay-1">Get house help<br /><span>in 10 min</span></h1>
       <p class="hero-lead animate-in delay-2">{{ site.heroLead }}</p>
       <div class="hero-actions animate-in delay-3">
-        <a class="btn btn-primary" routerLink="/" fragment="download">Download the app</a>
-        <a class="btn btn-ghost" routerLink="/" fragment="flow">See the customer flow</a>
+        <a class="btn btn-primary" routerLink="/book">Book now</a>
+        <a class="btn btn-ghost" routerLink="/" fragment="download">Get the app</a>
       </div>
       <ul class="hero-pills animate-in delay-4">
         @for (stat of heroStats; track stat.label) {
@@ -252,6 +252,9 @@
         <p class="kicker">Get the app</p>
         <h2>House help in 10 minutes.</h2>
         <p class="lead">{{ site.tagline }}</p>
+        <div class="hero-actions" style="margin-bottom: 18px">
+          <a class="btn btn-primary" routerLink="/book">Book now on the web</a>
+        </div>
         <div class="store-row">
           <div class="store"><small>Coming soon</small><strong>App Store</strong></div>
           <div class="store"><small>Coming soon</small><strong>Google Play</strong></div>
@@ -325,7 +328,7 @@
     <div class="app-row"><span>When</span><b>Today, 4:00 PM</b></div>
     <div class="app-row"><span>Where</span><b>Noida, Sector 62</b></div>
     <div class="app-row"><span>Visit</span><b>1 hour clean</b></div>
-    <div class="app-total"><span>Pay ₹399</span><b>Book</b></div>
+    <a class="app-total" routerLink="/book"><span>Pay ₹399</span><b>Book now</b></a>
   </div>
 </ng-template>
 

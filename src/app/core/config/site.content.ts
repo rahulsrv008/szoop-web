@@ -19,6 +19,8 @@ export const site = {
   supportEmail: environment.supportEmail,
   appStoreUrl: environment.appStoreUrl,
   playStoreUrl: environment.playStoreUrl,
+  bookAppUrl: environment.bookAppUrl,
+  bookPath: '/book',
   heroTitle: 'House help in 10 minutes',
   heroLead:
     'Get quick home cleaning and reliable house help with Szoop. Book cleaning, bathroom care, dishes, or laundry in the app, in minutes.',
@@ -256,7 +258,7 @@ export const legalPages: Record<string, LegalPage> = {
   privacy: {
     slug: 'privacy',
     title: 'Privacy Policy',
-    updated: '23 October 2026',
+    updated: '25 October 2026',
     paragraphs: [
       'This Privacy Policy explains how Szoop (“we”, “us”) collects, uses, and shares information when you use the Szoop customer app, the Szoop Partner app, or this website.',
     ],
@@ -297,13 +299,13 @@ export const legalPages: Record<string, LegalPage> = {
       {
         heading: 'How long we keep it',
         paragraphs: [
-          'Account and booking records are kept while the account is active and for a limited period after, as needed for refunds, disputes, and tax or legal records. You can ask us to delete your account by writing to hello@szoop.in.',
+          'Account and booking records are kept while the account is active and for a limited period after, as needed for refunds, disputes, and tax or legal records. You can delete your Szoop account in the app (Profile → Delete account) or request deletion at https://szoop.in/delete-account or by writing to hello@szoop.in.',
         ],
       },
       {
         heading: 'Your choices',
         paragraphs: [
-          'You can update your name and addresses in the app, turn off optional location access in your phone settings (some booking features will then not work), and request a copy or deletion of your account data.',
+          'You can update your name and addresses in the app, turn off optional location access in your phone settings (some booking features will then not work), and request a copy or deletion of your Szoop account at https://szoop.in/delete-account.',
         ],
       },
       {

@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.book-page {
+  position: relative;
+  height: 100%;
+  min-height: 100dvh;
+  background: #180d38;
+}
+
+.book-bar {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.book-back {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.book-back:hover {
+  opacity: 1;
+}
+
+.book-frame {
+  display: block;
+  width: 100%;
+  height: 100dvh;
+  border: 0;
+  background: #180d38;
+}
+
+.book-missing {
+  display: grid;
+  place-content: center;
+  height: 100dvh;
+  color: #fff;
+  text-align: center;
+  padding: 24px;
+}

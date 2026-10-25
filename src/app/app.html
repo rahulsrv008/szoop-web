@@ -1,6 +1,10 @@
-<a class="skip" href="#content">Skip to content</a>
-<app-site-header />
-<main id="content">
+@if (!bookingOpen()) {
+  <a class="skip" href="#content">Skip to content</a>
+  <app-site-header />
+}
+<main id="content" [class.book-main]="bookingOpen()">
   <router-outlet />
 </main>
-<app-site-footer />
+@if (!bookingOpen()) {
+  <app-site-footer />
+}

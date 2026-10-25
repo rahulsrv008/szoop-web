@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
   {
+    path: 'book',
+    loadComponent: () => import('./pages/book/book').then((m) => m.Book),
+  },
+  {
     path: 'about',
     loadComponent: () => import('./pages/about/about').then((m) => m.About),
   },
@@ -36,6 +40,11 @@ export const routes: Routes = [
     path: 'refunds',
     loadComponent: () => import('./pages/legal/legal').then((m) => m.Legal),
     data: { page: 'refunds' },
+  },
+  {
+    path: 'delete-account',
+    loadComponent: () =>
+      import('./pages/delete-account/delete-account').then((m) => m.DeleteAccount),
   },
   {
     path: '**',

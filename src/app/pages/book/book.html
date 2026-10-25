@@ -1,0 +1,22 @@
+<div class="book-page">
+  <div class="book-bar">
+    <a class="book-back" routerLink="/">← Back to Szoop</a>
+    @if (appHref()) {
+      <a class="book-back" [href]="appHref()">Open full page</a>
+    }
+  </div>
+  @if (appSrc()) {
+    <iframe
+      class="book-frame"
+      [src]="appSrc()"
+      title="Book a Szoop visit"
+      allow="payment; geolocation; clipboard-write"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  } @else {
+    <div class="book-missing">
+      <h1>Booking isn’t linked yet</h1>
+      <p>Set <code>bookAppUrl</code> in the site environment to the customer web app.</p>
+    </div>
+  }
+</div>
