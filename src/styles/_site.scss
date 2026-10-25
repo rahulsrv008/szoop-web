@@ -1361,6 +1361,25 @@
   font-size: 0.9em;
 }
 
+.scan-card {
+  text-align: center;
+}
+
+.scan-qr {
+  display: block;
+  width: min(360px, 100%);
+  height: auto;
+  margin: 8px auto 16px;
+  border-radius: 20px;
+  background: #fff;
+  padding: 12px;
+}
+
+.scan-url {
+  font-weight: 700;
+  word-break: break-all;
+}
+
 .faq-page {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;

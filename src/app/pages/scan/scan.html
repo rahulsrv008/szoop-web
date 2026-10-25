@@ -1,0 +1,25 @@
+<section class="page">
+  <div class="wrap legal-page scan-page">
+    <p class="eyebrow">Szoop - A lifestyle brand</p>
+    <h1>Scan to open Szoop</h1>
+    <p class="lead">
+      Open the camera on your phone and scan this code. The Szoop customer app opens in your
+      browser so you can book from your mobile.
+    </p>
+
+    <div class="story-panel scan-card">
+      <img class="scan-qr" [src]="qrSrc" width="360" height="360" alt="QR code to open the Szoop customer app" />
+      <p class="scan-url">{{ appUrl }}</p>
+      @if (isLocal) {
+        <p class="delete-note is-error">
+          This QR points to a local address. A phone will not reach it. Use the live app URL, or
+          put your computer’s Wi‑Fi address in <code>bookAppUrl</code>.
+        </p>
+      }
+      <p>
+        <a class="btn btn-primary" [href]="appUrl" target="_blank" rel="noopener">Open Szoop in browser</a>
+        <a class="btn btn-ghost" routerLink="/">Back home</a>
+      </p>
+    </div>
+  </div>
+</section>

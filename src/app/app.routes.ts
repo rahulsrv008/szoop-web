@@ -47,6 +47,10 @@ export const routes: Routes = [
       import('./pages/delete-account/delete-account').then((m) => m.DeleteAccount),
   },
   {
+    path: 'scan',
+    loadComponent: () => import('./pages/scan/scan').then((m) => m.Scan),
+  },
+  {
     path: '**',
     loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFound),
   },
