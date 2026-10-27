@@ -57,6 +57,17 @@
             ]
           },
           "configurations": {
+            "uat": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.uat.ts"
+                }
+              ],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -91,6 +102,9 @@
           "configurations": {
             "production": {
               "buildTarget": "oseedy-web:build:production"
+            },
+            "uat": {
+              "buildTarget": "oseedy-web:build:uat"
             },
             "development": {
               "buildTarget": "oseedy-web:build:development"
