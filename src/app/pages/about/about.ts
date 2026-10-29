@@ -15,9 +15,9 @@ export class About {
 
   constructor() {
     inject(SeoService).setPage({
-      title: 'About Szoop | Quick Home Cleaning and House Help',
+      title: 'About Szoop | On-Demand Home Cleaning & House Help App',
       description:
-        'Meet Szoop, the home services app for quick cleaning, laundry, dishes, and everyday house help with a focus on comfort and hygiene.',
+        'Szoop is an on-demand house help app for home cleaning, bathroom cleaning, laundry, salon at home, and a home cook — verified experts at your door in minutes.',
       path: '/about',
     });
   }

@@ -12,9 +12,9 @@ export class Cities {
 
   constructor() {
     inject(SeoService).setPage({
-      title: 'Szoop Cities | Home Cleaning and House Help Near You',
+      title: 'Home Cleaning in Bangalore, Mumbai, Delhi, Noida | Szoop',
       description:
-        'Find Szoop home cleaning and house help in Bengaluru, Mumbai, Delhi NCR, Gurugram, Noida, Hyderabad, Pune, and Chennai. Check your pin code in the app.',
+        'Book Szoop house help and home cleaning in Bengaluru, Mumbai, Delhi, Gurugram, Noida, Hyderabad, Pune, and Chennai. Maid service, bathroom cleaning, salon at home, and a home cook.',
       path: '/cities',
     });
   }

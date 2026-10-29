@@ -15,9 +15,9 @@ export class Faq {
 
   constructor() {
     inject(SeoService).setPage({
-      title: 'Szoop FAQ | Home Cleaning App and Booking Help',
+      title: 'House Help App FAQ | Cleaning, Salon & Booking | Szoop',
       description:
-        'Get answers about booking Szoop home cleaning, available services, trusted experts, arrival times, and launch cities.',
+        'FAQ for the Szoop house help app: home cleaning, salon at home, home cook, maid service, cities, and how to book.',
       path: '/faq',
     });
   }

@@ -1,33 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="utf-8" />
-    <title>Szoop | Quick Home Cleaning &amp; House Help App</title>
+    <title>Szoop | House Help &amp; Home Cleaning App in 10 Min</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Book quick home cleaning and trusted house help with the Szoop app. Get help with bathrooms, dishes, laundry, and more across 8 Indian cities."
+      content="Book house help and home cleaning in 10 minutes with Szoop. Bathroom cleaning, kitchen, dishes, laundry, salon at home, and a home cook in Bengaluru, Mumbai, Delhi NCR, Hyderabad, Pune, and Chennai."
+    />
+    <meta
+      name="keywords"
+      content="Szoop, house help app, home cleaning app, maid service, bathroom cleaning, kitchen cleaning, salon at home, home cook, house help Bangalore, house help Mumbai, house help Delhi, house help Noida, Snabbit, Pronto"
     />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://szoop.in/" />
-    <link rel="icon" type="image/svg+xml" href="/images/szoop-symbol.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="Szoop" />
-    <meta property="og:title" content="Szoop | Quick Home Cleaning &amp; House Help App" />
+    <meta property="og:title" content="Szoop | House Help &amp; Home Cleaning App in 10 Min" />
     <meta
       property="og:description"
-      content="Book quick home cleaning and trusted house help with the Szoop app."
+      content="On-demand house help, home cleaning, salon at home, and a home cook. Book in minutes across India."
     />
     <meta property="og:url" content="https://szoop.in/" />
     <meta property="og:image" content="https://szoop.in/images/szoop-logo.png" />
     <meta property="og:image:alt" content="Szoop — Need it? Szoop it." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Szoop | Quick Home Cleaning &amp; House Help App" />
+    <meta name="twitter:title" content="Szoop | House Help &amp; Home Cleaning App in 10 Min" />
     <meta
       name="twitter:description"
-      content="Book quick home cleaning and trusted house help with the Szoop app."
+      content="On-demand house help, home cleaning, salon at home, and a home cook. Book in minutes across India."
     />
     <meta name="twitter:image" content="https://szoop.in/images/szoop-logo.png" />
     <script type="application/ld+json">
@@ -38,18 +47,24 @@
             "@type": "Organization",
             "@id": "https://szoop.in/#organization",
             "name": "Szoop",
-            "alternateName": "Szoop Home Services",
+            "alternateName": ["Szoop Home Services", "Szoop house help app"],
             "url": "https://szoop.in/",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://szoop.in/images/szoop-logo.png"
+              "url": "https://szoop.in/images/favicon-512.png",
+              "width": 512,
+              "height": 512
             },
             "email": "hello@szoop.in",
+            "description": "Szoop is an on-demand house help and home cleaning app in India for bathroom cleaning, kitchen cleaning, laundry, salon at home, and home cook visits.",
+            "keywords": "house help app, home cleaning app, maid service, bathroom cleaning, salon at home, home cook, Snabbit, Pronto",
             "areaServed": [
               "Bengaluru",
+              "Bangalore",
               "Mumbai",
               "Delhi",
               "Gurugram",
+              "Gurgaon",
               "Noida",
               "Hyderabad",
               "Pune",
@@ -62,10 +77,30 @@
             "name": "Szoop",
             "alternateName": "Szoop Home Services",
             "url": "https://szoop.in/",
-            "publisher": {
-              "@id": "https://szoop.in/#organization"
-            },
+            "publisher": { "@id": "https://szoop.in/#organization" },
             "inLanguage": "en-IN"
+          },
+          {
+            "@type": "MobileApplication",
+            "name": "Szoop",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "Android, iOS, Web",
+            "url": "https://szoop.in/",
+            "description": "House help and home cleaning app. Book instant cleaning, salon at home, and a home cook.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+          },
+          {
+            "@type": "ItemList",
+            "name": "Szoop home services",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "House cleaning" },
+              { "@type": "ListItem", "position": 2, "name": "Bathroom cleaning" },
+              { "@type": "ListItem", "position": 3, "name": "Kitchen cleaning" },
+              { "@type": "ListItem", "position": 4, "name": "Dishwashing" },
+              { "@type": "ListItem", "position": 5, "name": "Laundry and ironing" },
+              { "@type": "ListItem", "position": 6, "name": "Salon at home" },
+              { "@type": "ListItem", "position": 7, "name": "Home cook" }
+            ]
           }
         ]
       }
@@ -79,5 +114,10 @@
   </head>
   <body>
     <app-root></app-root>
+    <p class="seo-hidden" aria-hidden="true">
+      Szoop house help app, home cleaning app, maid service, bathroom cleaning, kitchen cleaning,
+      dishwashing, laundry, salon at home, home cook. House help in Bangalore, Mumbai, Delhi,
+      Gurugram, Noida, Hyderabad, Pune, Chennai. Snabbit, Pronto, on-demand house help.
+    </p>
   </body>
 </html>

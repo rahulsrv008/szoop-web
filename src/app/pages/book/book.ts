@@ -4,6 +4,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs';
 import { site } from '../../core/config/site.content';
+import { SeoService } from '../../core/seo/seo.service';
 
 @Component({
   selector: 'app-book',
@@ -16,6 +17,16 @@ export class Book {
   readonly site = site;
   private readonly route = inject(ActivatedRoute);
   private readonly sanitizer = inject(DomSanitizer);
+
+  constructor() {
+    inject(SeoService).setPage({
+      title: 'Book Home Cleaning & House Help Online | Szoop',
+      description:
+        'Book Szoop house help online: home cleaning, bathroom cleaning, laundry, salon at home, or a home cook. Instant or scheduled visits.',
+      path: '/book',
+    });
+  }
+
   private readonly path = toSignal(
     this.route.queryParamMap.pipe(map((params) => params.get('path') ?? '/')),
     { initialValue: '/' },

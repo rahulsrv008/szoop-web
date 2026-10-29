@@ -61,9 +61,9 @@ export class Home implements AfterViewInit, OnDestroy {
 
   constructor() {
     inject(SeoService).setPage({
-      title: 'Szoop | Quick Home Cleaning & House Help App',
+      title: 'Szoop | House Help & Home Cleaning App in 10 Min',
       description:
-        'Book quick home cleaning and trusted house help with the Szoop app. Get help with bathrooms, dishes, laundry, and more across 8 Indian cities.',
+        'Book house help and home cleaning in 10 minutes with Szoop. Bathroom cleaning, kitchen, dishes, laundry, salon at home, and a home cook in Bengaluru, Mumbai, Delhi NCR, Hyderabad, Pune, and Chennai.',
       path: '/',
     });
   }

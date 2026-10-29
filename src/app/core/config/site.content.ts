@@ -24,6 +24,8 @@ export const site = {
   heroTitle: 'House help in 10 minutes',
   heroLead:
     'Get quick home cleaning and reliable house help with Szoop. Book cleaning, bathroom care, dishes, or laundry in the app, in minutes.',
+  keywords:
+    'Szoop, house help app, home cleaning app, maid service, bathroom cleaning, kitchen cleaning, salon at home, home cook, house help Bangalore, house help Mumbai, house help Delhi, house help Noida, Snabbit, Pronto',
 };
 
 export const primaryNav: NavLink[] = [
